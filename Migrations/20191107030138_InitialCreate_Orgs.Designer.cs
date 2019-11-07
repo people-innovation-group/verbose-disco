@@ -9,7 +9,7 @@ using Models;
 namespace verbose_disco.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191107020505_InitialCreate_Orgs")]
+    [Migration("20191107030138_InitialCreate_Orgs")]
     partial class InitialCreate_Orgs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,34 +24,25 @@ namespace verbose_disco.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("boarding")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("classification")
+                    b.Property<DateTime>("DateLastModified")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("dateLastModified")
+                    b.Property<string>("Identifier")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("gender")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("identifier")
+                    b.Property<string>("ParentSourcedId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("name")
+                    b.Property<string>("SourcedId")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("parentSourcedId")
+                    b.Property<string>("Status")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("sourcedId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("status")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("type")
+                    b.Property<string>("Type")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

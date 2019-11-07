@@ -5,9 +5,5 @@ export interface Org {
     dateLastModified: Date;
     name: string;
     type: string;
-    identifier: string;
-    classification: string;
-    gender: string;
-    boarding: boolean;
     parentSourcedId: string;
 }

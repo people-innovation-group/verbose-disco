@@ -13,16 +13,13 @@ namespace verbose_disco.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    sourcedId = table.Column<string>(nullable: true),
-                    status = table.Column<string>(nullable: true),
-                    dateLastModified = table.Column<DateTime>(nullable: false),
-                    name = table.Column<string>(nullable: true),
-                    type = table.Column<string>(nullable: true),
-                    identifier = table.Column<string>(nullable: true),
-                    classification = table.Column<string>(nullable: true),
-                    gender = table.Column<string>(nullable: true),
-                    boarding = table.Column<bool>(nullable: false),
-                    parentSourcedId = table.Column<string>(nullable: true)
+                    SourcedId = table.Column<string>(nullable: true),
+                    Status = table.Column<string>(nullable: true),
+                    DateLastModified = table.Column<DateTime>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    Type = table.Column<string>(nullable: true),
+                    Identifier = table.Column<string>(nullable: true),
+                    ParentSourcedId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

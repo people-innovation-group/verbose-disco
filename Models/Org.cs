@@ -5,20 +5,20 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Models
 {
+    /// <summary>
+    /// Top Level Org Container
+    /// </summary>
     public class Org
     {
         [Key]
         public int Id { get; set; }
-        public string sourcedId { get; set; }
-        public string status { get; set; }
-        public DateTime dateLastModified { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
-        public string identifier { get; set; }
-        public string classification { get; set; }
-        public string gender { get; set; }
-        public bool boarding { get; set; }
-        public string parentSourcedId { get; set; }
+        public string SourcedId { get; set; }
+        public string Status { get; set; }
+        public DateTime DateLastModified { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
+        public string Identifier { get; set; }
+        public string ParentSourcedId { get; set; }
     }
 
 }
