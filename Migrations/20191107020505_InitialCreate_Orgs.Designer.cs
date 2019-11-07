@@ -9,7 +9,7 @@ using Models;
 namespace verbose_disco.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20191107004137_InitialCreate_Orgs")]
+    [Migration("20191107020505_InitialCreate_Orgs")]
     partial class InitialCreate_Orgs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,9 +20,9 @@ namespace verbose_disco.Migrations
 
             modelBuilder.Entity("Models.Org", b =>
                 {
-                    b.Property<Guid>("sourcedId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<bool>("boarding")
                         .HasColumnType("INTEGER");
@@ -42,7 +42,10 @@ namespace verbose_disco.Migrations
                     b.Property<string>("name")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("parentSourcedId")
+                    b.Property<string>("parentSourcedId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("sourcedId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("status")
@@ -51,7 +54,7 @@ namespace verbose_disco.Migrations
                     b.Property<string>("type")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("sourcedId");
+                    b.HasKey("Id");
 
                     b.ToTable("Orgs");
                 });

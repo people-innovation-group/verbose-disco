@@ -8,7 +8,8 @@ namespace Models
     public class Org
     {
         [Key]
-        public Guid sourcedId { get; set; }
+        public int Id { get; set; }
+        public string sourcedId { get; set; }
         public string status { get; set; }
         public DateTime dateLastModified { get; set; }
         public string name { get; set; }
@@ -17,7 +18,7 @@ namespace Models
         public string classification { get; set; }
         public string gender { get; set; }
         public bool boarding { get; set; }
-        public Guid parentSourcedId { get; set; }
+        public string parentSourcedId { get; set; }
     }
 
 }

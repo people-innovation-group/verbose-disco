@@ -11,7 +11,9 @@ namespace verbose_disco.Migrations
                 name: "Orgs",
                 columns: table => new
                 {
-                    sourcedId = table.Column<Guid>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    sourcedId = table.Column<string>(nullable: true),
                     status = table.Column<string>(nullable: true),
                     dateLastModified = table.Column<DateTime>(nullable: false),
                     name = table.Column<string>(nullable: true),
@@ -20,11 +22,11 @@ namespace verbose_disco.Migrations
                     classification = table.Column<string>(nullable: true),
                     gender = table.Column<string>(nullable: true),
                     boarding = table.Column<bool>(nullable: false),
-                    parentSourcedId = table.Column<Guid>(nullable: false)
+                    parentSourcedId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orgs", x => x.sourcedId);
+                    table.PrimaryKey("PK_Orgs", x => x.Id);
                 });
         }
 

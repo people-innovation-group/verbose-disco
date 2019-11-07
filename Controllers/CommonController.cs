@@ -9,20 +9,19 @@ using Models;
 namespace verbose_disco.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CommonController : ControllerBase
     {
         Context context;
         public CommonController(Context _ctx)
         {
-            context = _ctx;
+            this.context = _ctx;
         }
         
-        [HttpGet]
-        public string GetOrgName()
+        [HttpGet("[action]")]
+        public Org GetOrg()
         {
-
-                return context.Orgs.First().name;
+            return context.Orgs?.First();
         }
     }
 }
