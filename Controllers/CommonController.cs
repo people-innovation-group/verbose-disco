@@ -18,10 +18,17 @@ namespace verbose_disco.Controllers
             this.context = _ctx;
         }
         
+
         [HttpGet("[action]")]
-        public Org GetOrg()
+        public List<Org> GetOrg()
         {
-            return context.Orgs?.First();
+            return context.Orgs.Select(o => o).ToList();
+        }
+
+        [HttpGet("[action]/{id}")]
+        public Org GetOrg(int id)
+        {
+            return context.Orgs.Where(o => o.Id == id).First();
         }
     }
 }

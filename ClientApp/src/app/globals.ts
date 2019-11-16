@@ -7,24 +7,31 @@ import { Org } from './interfaces/org';
 
 @Injectable()
 export class Globals {
-    public organization: Org;
+    public current_organization: Org;
 
     //Constants
     jsDateFormat = 'YYYY-MM-DDTHH:mm:ss';
 
-    constructor(private commonService: CommonService) {
+    constructor(
+        private commonService: CommonService
+    ) {
 
     }
 
     initUser(): Promise<void> {
 
-        const getOrg = this.commonService.getOrg().toPromise();
+        const getOrg = this.commonService.getOrgs().toPromise();
 
         const all = Promise.all([getOrg]).then(result => {
-            this.organization = result[0];
-            console.log(this.organization);
+            this.current_organization = result[0][0];
+            console.log(this.current_organization);
         });
         return all;
+    }
+
+    public changeOrg(org: Org)
+    {
+        this.current_organization = org;
     }
 
 }

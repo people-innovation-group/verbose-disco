@@ -8,10 +8,11 @@ import { Globals } from '../globals';
 })
 export class NavMenuComponent {
   isExpanded = false;
-  title = "";
-  constructor(globals: Globals)
+  constructor(
+    public globals: Globals
+  )
   {
-    this.title = globals.organization.name;
+
   }
   collapse() {
     this.isExpanded = false;
